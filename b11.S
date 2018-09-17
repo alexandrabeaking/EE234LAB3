@@ -25,6 +25,9 @@ initialize_PWM_DC:
 /*LED1*/
     MOVw r1, #0 	@ Let r1 = 0
     STR r1, [r0, #0x0C] @ store r1 in r0+0x0C (initialize PWM Duty Cycle as 0 for LED1)
+     STR r1, [r0, #0x10]
+    STR r1, [r0, #0x14]
+    STR r1, [r0, #0x18]
     bx lr 		@ return to the calling function
 set_PWM_DC:
     STR r1, [r0, #0x0C]	@ store r1 in r0+0x0C
